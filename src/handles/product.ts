@@ -24,7 +24,8 @@ export const handleShowProduct = async (
 ) => {
 	try {
 		const product = new productStore();
-		const result = product.showProduct(req.body);
+		const { id } = req.params;
+		const result = product.showProduct(id);
 		res.status(200).json({
 			data: result
 		});
@@ -40,12 +41,10 @@ export const handleCreateProduct = async (
 ) => {
 	try {
 		const product = new productStore();
-		console.log(req.body);
-
-		// const result = product.createProduct(req.body);
-		// res.status(200).json({
-		// 	data: result
-		// });
+		const result = product.createProduct(req.body);
+		res.status(200).json({
+			data: result
+		});
 	} catch (error) {
 		next(error);
 	}

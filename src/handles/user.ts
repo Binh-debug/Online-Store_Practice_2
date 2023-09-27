@@ -24,7 +24,10 @@ export const handleShowUser = async (
 ) => {
 	try {
 		const user = new userStore();
-		const result = await user.showUser(req.body);
+		const { id } = req.params;
+		const result = await user.showUser(id);
+		console.log(result);
+
 		res.status(200).json({
 			data: result
 		});

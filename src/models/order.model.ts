@@ -4,7 +4,7 @@ import { orderType } from '../types';
 export class orderStore {
 	async getCurrentOrder(userId: string): Promise<orderType[]> {
 		try {
-			const queryString = 'SELECT * FROM orders WHERE userId = ($1);';
+			const queryString = 'SELECT * FROM orders WHERE user_id = ($1);';
 			const connection = await database.connect();
 			const result = await connection.query(queryString, [userId]);
 			connection.release();
@@ -18,7 +18,7 @@ export class orderStore {
 	async getOrderSuccessByUser(userId: string): Promise<orderType[]> {
 		try {
 			const queryString =
-				'SELECT * FROM orders WHERE userId = ($1) AND orderStatus = "Done"';
+				'SELECT * FROM orders WHERE user_id = ($1) AND orderStatus = "Done"';
 			const connection = await database.connect();
 			const result = await connection.query(queryString, [userId]);
 			connection.release();

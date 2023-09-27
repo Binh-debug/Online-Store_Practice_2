@@ -8,10 +8,12 @@ export const getOrderByUser = async (
 ) => {
 	try {
 		const orderModel = new orderStore();
-		const result = await orderModel.getCurrentOrder(req.body);
+		const { id } = req.params;
+		const result = await orderModel.getCurrentOrder(id);
 		res.status(200).json({
 			data: result
 		});
+		next();
 	} catch (error) {
 		next(error);
 	}
