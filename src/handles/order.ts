@@ -18,5 +18,3 @@ export const getOrderByUser = async (
 		next(error);
 	}
 };
-// TODO
-// export const get;
