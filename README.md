@@ -23,11 +23,11 @@
 
         `CREATE USER developer WITH PASSWORD '1234'`;
 
-    > Grant all database privileges to user in both database
+        > Grant all database privileges to user in both database
 
-    `GRANT ALL PRIVILEGES ON DATABASE online_store_dev to developer;`
+        `GRANT ALL PRIVILEGES ON DATABASE online_store_dev to developer;`
 
-    `GRANT ALL PRIVILEGES ON DATABASE online_store_test to developer;`
+        `GRANT ALL PRIVILEGES ON DATABASE online_store_test to developer;`
 
     - **Create database**
 
@@ -41,15 +41,15 @@
 
 3. **Step 3**: _Setting environment variables_
 
-    _HOST = localhost_
-    _DATABASE = online_store_dev_
-    _TEST_DATABASE= online_store_test_
-    _PORT=3000_
-    _PG_USER = developer_
-    _PASSWORD = pass123_
-    _ENV=dev_
-    _PORT = 3000_
-    _SECRET_KEY= prayForYou_
+    - _HOST = localhost_
+    - _DATABASE = online_store_dev_
+    - _TEST_DATABASE= online_store_test_
+    - _PORT=3000_
+    - _PG_USER = developer_
+    - _PASSWORD = pass123_
+    - _ENV=dev_
+    - _PORT = 3000_
+    - _SECRET_KEY= prayForYou_
 
 4. **Step 4**: _Run migration script_
 
