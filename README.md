@@ -1,16 +1,16 @@
 # Online-Store ( Practice_2 )
 
-**_Practice Lesson On How to Create APIs_**
+**_Practice Lesson On How to Create APIs For Website_**
 
 ## Setup connect to database and run project on local
 
 1. **Step 1**: _Create database and connect to database_
 
--   **Create user**
+    - **Create user**
 
 `CREATE USER full_stack_user WITH PASSWORD '1234'`;
 
--   **Create database and connect**
+    - **Create database and connect**
 
 `CREATE DATABASE dev_db;` for local development
 `CREATE DATABASE test_db;` for test command
