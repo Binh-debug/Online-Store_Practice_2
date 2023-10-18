@@ -4,39 +4,45 @@
 
 ## Setup connect to database and run project on local
 
-1. **Step 1**: _Create database and connect to database_
+1.  **Step 1**: _Create database and connect to database_
 
     - **Create user**
 
-`CREATE USER full_stack_user WITH PASSWORD '1234'`;
+        `CREATE USER developer WITH PASSWORD '1234'`;
 
-    - **Create database and connect**
+    > Grant all database privileges to user in both database
 
-`CREATE DATABASE dev_db;` for local development
-`CREATE DATABASE test_db;` for test command
+        `GRANT ALL PRIVILEGES ON DATABASE online_store_dev to developer;`
 
-# Grant all database privileges to user in both database
+        `GRANT ALL PRIVILEGES ON DATABASE online_store_test to developer;`
 
-`GRANT ALL PRIVILEGES ON DATABASE dev_db to full_stack_user;`
-`GRANT ALL PRIVILEGES ON DATABASE test_db to full_stack_user;`
+    - **Create database**
 
-# Run migration
+        `CREATE DATABASE online_store_dev;` for development environment
+
+        `CREATE DATABASE online_store_test;` for test environment
+
+    - **Connect to database**
+
+        `\c online_store_dev`
+
+## Run migration script
 
 `npm run migration:up`
 
-# Env file variables including port, database name, BE config, etc... app running
+## Env file variables including port, database name, BE config, etc... app running
 
+HOST = localhost
+DATABASE = online_store_dev
+TEST_DATABASE= online_store_test
 PORT=3000
-PG_USER = postgres
-PG_HOST = localhost
-PG_DEV_DB = dev_db
-PG_TEST_DB= test_db
-PG_PASSWORD = nam205806
-PG_PORT = 5432
-TOKEN_SECRET_KEY= @$123123man!@%
+PG_USER = developer
+PASSWORD = pass123
 ENV=dev
+PORT = 3000
+SECRET_KEY= prayForYou
 
-1. **Step 2**
+2. **Step 2**
 
 ### Install package and build project
 
@@ -50,13 +56,13 @@ List packages required:
 -   Pg for database
 -   Cors
 
-1. **Step 3**
+3. **Step 3**
 
 ### After build done run migration for databases
 
 Run command `npm run migration:run` with .ENV file config
 
-1. **Step 4**
+4. **Step 4**
 
 ### Run project
 
