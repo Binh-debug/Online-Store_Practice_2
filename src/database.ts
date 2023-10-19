@@ -19,5 +19,6 @@ if (ENV === 'test') {
 		password: PASSWORD
 	});
 }
+console.log('----------', ENV);
 
 export default database;

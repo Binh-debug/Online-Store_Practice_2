@@ -8,7 +8,9 @@ export const handleShowProducts = async (
 ) => {
 	try {
 		const product = new productStore();
-		const result = product.showProducts();
+		const result = await product.showProducts();
+		console.log(result);
+
 		res.status(200).json({
 			data: result
 		});
@@ -25,7 +27,7 @@ export const handleShowProduct = async (
 	try {
 		const product = new productStore();
 		const { id } = req.params;
-		const result = product.showProduct(id);
+		const result = await product.showProduct(id);
 		res.status(200).json({
 			data: result
 		});
@@ -41,7 +43,7 @@ export const handleCreateProduct = async (
 ) => {
 	try {
 		const product = new productStore();
-		const result = product.createProduct(req.body);
+		const result = await product.createProduct(req.body);
 		res.status(200).json({
 			data: result
 		});

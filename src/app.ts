@@ -4,7 +4,7 @@ import apiRoute from './apis';
 
 const app: Application = express();
 dotenv.config();
-const PORT = process.env.PORT;
+const { PORT } = process.env;
 
 app.use('/api', apiRoute);
 
