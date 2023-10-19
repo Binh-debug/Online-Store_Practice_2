@@ -35,6 +35,8 @@
 
         `CREATE DATABASE online_store_test;` for test environment
 
+        `ALTER DATABASE online_store_test OWNER TO tester;` fix bug schema public
+
     - **Connect to database**
 
         `\c online_store_dev`
