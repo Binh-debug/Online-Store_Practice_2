@@ -21,7 +21,7 @@
 
     - **Create user**
 
-        `CREATE USER developer WITH PASSWORD '1234'`;
+        `CREATE USER developer WITH PASSWORD 'pass123'`;
 
         > Grant all database privileges to user in both database
 
@@ -50,7 +50,6 @@
     - _PG_USER = developer_
     - _PASSWORD = pass123_
     - _ENV=dev_
-    - _PORT = 3000_
     - _SECRET_KEY= prayForYou_
 
 4. **Step 4**: _Start Project_
