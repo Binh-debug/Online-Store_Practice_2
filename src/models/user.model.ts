@@ -36,7 +36,7 @@ export class userStore {
 	}): Promise<userType> {
 		try {
 			const saltRounds = 10;
-			const hashedPassword = bcrypt.hash(
+			const hashedPassword = await bcrypt.hash(
 				password,
 				saltRounds,
 				(err, hash) => {

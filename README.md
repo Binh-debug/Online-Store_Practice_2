@@ -53,17 +53,9 @@
     - _PORT = 3000_
     - _SECRET_KEY= prayForYou_
 
-4. **Step 4**: _Run migration script_
-
-    `npm run migration:up`
-
-5. **Step 5**: _Start Project_
+4. **Step 4**: _Start Project_
 
     `npm run start` or `npm run dev`
-
-## After build done run migration for databases
-
-Run command: `npm run migration:run` with .ENV file config
 
 ## Testing with jasmine
 
