@@ -41,7 +41,11 @@
 
         `\c online_store_dev`
 
-3. **Step 3**: _Setting environment variables_
+3. **Step 3**: _Start Project_
+
+    `npm run start` or `npm run dev`
+
+## Setting environment variables include: PORT, DATABASE NAME, BE config,...
 
     - _HOST = localhost_
     - _DATABASE = online_store_dev_
@@ -51,10 +55,6 @@
     - _PASSWORD = pass123_
     - _ENV=dev_
     - _SECRET_KEY= prayForYou_
-
-4. **Step 4**: _Start Project_
-
-    `npm run start` or `npm run dev`
 
 ## Testing with jasmine
 
