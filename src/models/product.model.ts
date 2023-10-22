@@ -18,7 +18,7 @@ export class productStore {
 
 	async showProduct(id: string): Promise<productType> {
 		try {
-			const queryString = 'SELECT * FROM product WHERE id =($1);';
+			const queryString = 'SELECT * FROM products WHERE id =($1);';
 			const connection = await database.connect();
 			const result = await database.query(queryString, [id]);
 			connection.release();
