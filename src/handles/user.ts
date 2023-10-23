@@ -30,7 +30,6 @@ export const handleShowUser = async (
 		const user = new userStore();
 		const { id } = req.params;
 		const result = await user.showUser(id);
-		console.log(result);
 
 		res.status(200).json({
 			data: result
@@ -47,7 +46,9 @@ export const handleCreateUser = async (
 ) => {
 	try {
 		const user = new userStore();
-		const result = await user.createUser(req.body);
+		const { firstName, lastName, password } = req.body;
+		console.log(lastName, password);
+		const result = await user.createUser({ firstName, lastName, password });
 		res.status(200).json({
 			data: result
 		});
@@ -63,8 +64,10 @@ export const userAuthentication = async (
 ) => {
 	try {
 		const user = new userStore();
+
 		const { lastName, password } = req.body;
 		const userInfo = await user.authentication(lastName, password);
+
 		if (!userInfo) {
 			return res.status(401).json({
 				message: 'User Info Invalid'

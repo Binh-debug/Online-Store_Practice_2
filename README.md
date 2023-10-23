@@ -43,7 +43,11 @@
 
 3. **Step 3**: _Start Project_
 
-    `npm run start` or `npm run dev`
+    `npm run start` or `npm run dev`\
+
+## PORT
+
+After start up, the server will start on port 3000 and the database run on port 5432
 
 ## Setting environment variables include: PORT, DATABASE NAME, BE config,...
 

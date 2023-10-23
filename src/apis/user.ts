@@ -10,6 +10,6 @@ import { authentication } from '../middleware/authentication';
 const userRoute = Router();
 userRoute.get('/', authentication, handleShowUsers);
 userRoute.get('/:id', authentication, handleShowUser);
-userRoute.post('/', authentication, handleCreateUser);
+userRoute.post('/', handleCreateUser);
 userRoute.post('/login', userAuthentication);
 export default userRoute;

@@ -1,15 +1,15 @@
 export type productType = {
-	id: string;
+	id: number;
 	name: string;
 	price: number;
 	category: string;
 };
 
 export type userType = {
-	id: string;
-	firstName: string;
-	lastName: string;
-	password: string;
+	id: number;
+	first_name: string;
+	last_name: string;
+	pass: string;
 };
 
 export type orderType = {

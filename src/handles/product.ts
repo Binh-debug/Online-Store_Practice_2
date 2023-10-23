@@ -9,7 +9,6 @@ export const handleShowProducts = async (
 	try {
 		const product = new productStore();
 		const result = await product.showProducts();
-		console.log(result);
 
 		res.status(200).json({
 			data: result

@@ -12,6 +12,7 @@ export const authentication = (
 		const { SECRET_KEY } = process.env;
 		const authorizationHeader = req.headers.authorization;
 		const token = authorizationHeader?.split('')[1];
+
 		if (token) {
 			const isValidToken = jwt.verify(token, SECRET_KEY);
 			if (isValidToken) next();

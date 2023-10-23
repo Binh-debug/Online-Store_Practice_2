@@ -54,3 +54,21 @@ These are the notes from a meeting with the frontend developer that describe wha
 -   quantity of each product in the order
 -   user_id
 -   status of order (active or complete)
+
+## Data Types
+
+#### products
+
+|`Columns`|`type`|id|`SERIAL`| name | `varchar(50)`| price | `integer` | category | `varchar(50)`
+
+#### users
+
+|`Columns`|`type`|id|`SERIAL`| first_name|`varchar(100)` | last_name |`varchar(100)` | pass |`varchar`
+
+#### orders
+
+|`Columns`|`type`|id|`SERIAL`| product_id|`integer` | quantity_product |`integer` | user_id |`integer` | order_status |`varchar(100)`
+
+#### order_product
+
+|`Columns`|`type`|order_id|`integer`| product_id|`integer` | quantity |`integer`

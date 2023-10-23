@@ -41,7 +41,7 @@ export class productStore {
 	}): Promise<productType> {
 		try {
 			const queryString =
-				'INSERT INTO products (id, name, price, category) VALUES ($1, $2, $3) RETURNING *;';
+				'INSERT INTO products (name, price, category) VALUES ($1, $2, $3) RETURNING *;';
 			const connection = await database.connect();
 			const result = await connection.query(queryString, [
 				name,
@@ -52,9 +52,7 @@ export class productStore {
 			connection.release();
 			return result.rows[0];
 		} catch (error) {
-			throw new Error(
-				`Could not create product with ID = ${123}.--- ERROR: ${error}`
-			);
+			throw new Error(`Could not create product --- ERROR: ${error}`);
 		}
 	}
 }

@@ -36,17 +36,9 @@ export class userStore {
 	}): Promise<userType> {
 		try {
 			const saltRounds = 10;
-			const hashedPassword = await bcrypt.hash(
-				password,
-				saltRounds,
-				(err, hash) => {
-					if (err) {
-						console.log('ERROR:', err);
-					} else {
-						console.log('Hashed password:', hash);
-					}
-				}
-			);
+			const hashedPassword = await bcrypt.hash(password, saltRounds);
+			console.log('password hashed', hashedPassword);
+
 			const queryString =
 				'INSERT INTO users (first_name, last_name, pass) VALUES ($1,$2,$3) RETURNING * ;';
 			const connection = await database.connect();
